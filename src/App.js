@@ -1,9 +1,29 @@
 import React, { useLayoutEffect, useRef } from 'react';
 import Grid from '@material-ui/core/Grid'
 import './App.css';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    [theme.breakpoints.down('sm')]: {
+       width:'25%',
+      
+    },
+    palm:{
+      
+      [theme.breakpoints.down('sm')]: {
+        width:'25%',
+        //position:'absolute',
+        top:'-30%'
+     },
+
+    }
+  },
+}));
+
 
 function App() {
-
+  const classes = useStyles();
 
   const red_queen_and_alice = useRef(null);
   const foreground1 = useRef(null);
@@ -104,27 +124,27 @@ function App() {
         <div className="sky"></div>
         <div className="earth">
           <div className="alice">
-            <img id="red-queen_and_alice_sprite" ref={red_queen_and_alice} src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/641/sprite_running-alice-queen_small.png"  alt="Alice and the Red Queen running to stay in place."/>
+            <img id="red-queen_and_alice_sprite" className={classes.root} ref={red_queen_and_alice} src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/641/sprite_running-alice-queen_small.png"  alt="Alice and the Red Queen running to stay in place."/>
           </div>
         </div>
       
-        <div className="scenery" ref={foreground1}>
-          <img id="palm3" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/641/palm3_small.png"  alt=" "/>
+        <div className="scenery" id="foreground1" ref={foreground1}>
+          <img id="palm3" className={classes.root} src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/641/palm3_small.png"  alt=" "/>
         </div>
-        <div className ="scenery" ref={foreground2}>    
-          <img id="bush" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/641/bush_small.png"  alt=" " />
-          <img id="w_rook_upright" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/641/w_rook_upright_small.png"  alt=" "/>
+        <div className ="scenery" id="foreground2" ref={foreground2}>    
+          <img id="bush" className={classes.root} src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/641/bush_small.png"  alt=" " />
+          <img id="w_rook_upright" className={classes.root} src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/641/w_rook_upright_small.png"  alt=" "/>
         </div>
-        <div className="scenery" ref={background1}>
-          <img id="r_pawn_upright" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/641/r_pawn_upright_small.png"  alt=" "/>
-          <img id="w_rook" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/641/w_rook_small.png"  alt=" "/>
-          <img id="palm1" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/641/palm1_small.png"  alt=" "/>
+        <div className="scenery" id="background1" ref={background1}>
+          <img id="r_pawn_upright"  className={classes.root} src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/641/r_pawn_upright_small.png"  alt=" "/>
+          <img id="w_rook" className={classes.root} src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/641/w_rook_small.png"  alt=" "/>
+          <img id="palm1" className={classes.palm} src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/641/palm1_small.png"  alt=" "/>
         </div>
-        <div className="scenery" ref={background2}>
-          <img id="r_pawn" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/641/r_pawn_small.png"  alt=" "/>
+        <div className="scenery" id="background2"ref={background2}>
+          <img id="r_pawn" className={classes.root} src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/641/r_pawn_small.png"  alt=" "/>
       
-          <img id="r_knight" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/641/r_knight_small.png"  alt=" "/>
-          <img id="palm2" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/641/palm2_small.png"  alt=" "/>
+          <img id="r_knight" className={classes.root} src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/641/r_knight_small.png"  alt=" "/>
+          <img id="palm2" className={classes.root} src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/641/palm2_small.png"  alt=" "/>
         </div>
       </div>
       </Grid>

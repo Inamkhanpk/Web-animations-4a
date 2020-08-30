@@ -51,8 +51,8 @@ img {
   bottom: 0; left: 0;
 }
 
-#foreground { z-index: 1 ;}
-#foreground, .background2 {
+#foreground1,#foreground2 { z-index: 1 ;}
+#foreground2, #background2 {
   transform: translateX(100%);
 }
 
@@ -64,7 +64,7 @@ html, body {
 
 
 #palm3 {
-  top: 0; left: 10%;
+  top: 0; left: 15%;
 }
 
 #w_rook_upright {
@@ -72,27 +72,27 @@ html, body {
 }
 
 #r_pawn {
-  top: 10%; left: 80%    
+  top: 20%; left: 90%    
 }
 
 #w_rook {
-  top: 10%; left: 10%    
+  top: 10%; left: 80%    
 }
 
 #r_pawn_upright {
-  top: -30%; left: 30%    
+  top: -10%; left: 10%    
 }
 
 #r_knight {
-  top:-30%; left: 90%    
+  top:0%; left: 30%    
 }
 
 #palm2 {
-  top: -40%; left: 60%    
+  top: -40%; left: 40%    
 }
 
 #palm1 {
-  top: -15%; left: 40%    
+  top: -15%; left: 60%    
 }
 
 #bush {
